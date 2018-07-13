@@ -56,13 +56,13 @@ function class.new(game)
 
             if oldCharacter ~= nil then
               local color = {
-                oldCharacter.color[1] + 0.1,
-                oldCharacter.color[2] + 0.1,
-                oldCharacter.color[3] + 0.1
+                oldCharacter.getColor()[1] + 0.1,
+                oldCharacter.getColor()[2] + 0.1,
+                oldCharacter.getColor()[3] + 0.1
               }
 
               local character = characterClass.new(
-                      oldCharacter.character,
+                      oldCharacter.getCharacter(),
                       color
               )
 

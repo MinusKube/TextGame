@@ -62,11 +62,11 @@ function class.new(game)
           for column = 1, #row do
             local gray = math.random() / 20 + 0.05
 
-            row[column].color = { gray, gray, gray }
+            row[column] = row[column].editColor({ gray, gray, gray })
           end
         else
           for column = 1, #row do
-            row[column].color = { 0.1, 0.1, 0.1 }
+            row[column] = row[column].editColor({ 0.1, 0.1, 0.1 })
           end
         end
       end

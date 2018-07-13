@@ -4,11 +4,27 @@ local class = {}
 ---@param color number[]
 ---@return Character
 function class.new(character, color)
+  color = color or { 1, 1, 1 }
+
   ---@class Character
   local self = {}
 
-  self.character = character
-  self.color = color or { 1, 1, 1 }
+  ---@param newCharacter string
+  ---@return Character
+  function self.editCharacter(newCharacter)
+    return class.new(newCharacter, color)
+  end
+
+  ---@param newColor number[]
+  ---@return Character
+  function self.editColor(newColor)
+    return class.new(character, newColor)
+  end
+
+  ---@return string
+  function self.getCharacter() return character end
+  ---@return number[]
+  function self.getColor() return color end
 
   return self
 end

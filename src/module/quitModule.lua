@@ -47,11 +47,11 @@ function class.new(game)
               if math.random(20) ~= 1 or math.abs(i - quittingState) > 3 + math.random(3) then
                 game.setCharacter(characterClass.empty(), row, column)
               else
-                characters[row][column].color = { 0.3, 0, 0 }
+                characters[row][column] = characters[row][column].editColor({ 0.3, 0, 0 })
               end
             else
               local gray = 0.1 - quittingState % 0.1
-              characters[row][column].color = { gray, gray, gray }
+              characters[row][column] = characters[row][column].editColor({ gray, gray, gray })
             end
           end
         end

@@ -59,8 +59,8 @@ function class.new()
         local x = (column - 1) * 8 + 1
         local y = (row - 1) * 8
 
-        love.graphics.setColor(characters[row][column].color)
-        love.graphics.print(characters[row][column].character, x, y)
+        love.graphics.setColor(characters[row][column].getColor())
+        love.graphics.print(characters[row][column].getCharacter(), x, y)
       end
     end
 
