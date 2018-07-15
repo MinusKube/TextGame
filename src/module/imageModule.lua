@@ -51,10 +51,19 @@ function class.new(game, data, character, startRow, startColumn)
     end
   end
 
-  ---@return number[]
-  function self.getColor() return color end
-  ---@param _color number[]
-  function self.setColor(_color) color = _color end
+  ---@return Character
+  function self.getCharacter() return character end
+  ---@param _character Character
+  function self.setCharacter(_character) character = _character end
+
+  ---@return number, number
+  function self.getStartPosition() return startRow, startColumn end
+  ---@param row number
+  ---@param column number
+  function self.setStartPosition(row, column)
+    startRow = row
+    startColumn = column
+  end
 
   return self
 end
